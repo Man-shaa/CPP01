@@ -6,11 +6,11 @@ SRC_DIR		=	$(shell find . -type d)
 vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 
 HEADER		=	Zombie.hpp		\
-				newZombie.hpp
 
-SRCS	 	=	Zombie.cpp		\
+SRCS	 	=	main.cpp		\
 				newZombie.cpp	\
-				main.cpp
+				randomChump.cpp	\
+				Zombie.cpp
 
 OBJS		=	$(SRCS:%.cpp=${OBJ_DIR}/%.o)
 
