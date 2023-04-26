@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 18:30:02 by msharifi          #+#    #+#             */
-/*   Updated: 2023/04/26 19:43:36 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/04/26 20:27:01 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 int	main(void)
 {
 	Zombie z1("Mateo");
-	Zombie *ptr = NULL;
+	Zombie *ptr = newZombie("ptr");
 
 	z1.randomChump("Manuel");
-	ptr = ptr->newZombie("ptr");
-	// ptr->announce();
+	ptr->announce();
 	return (0);
 }
