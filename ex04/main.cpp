@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 23:08:51 by msharifi          #+#    #+#             */
-/*   Updated: 2023/04/27 19:51:29 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:02:25 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@
 
 int	main(int ac, char **av)
 {
-	std::string			outName = av[1];
+	std::string			outName;
 	std::string			toFind;
 	std::string			toReplace;
-	std::stringstream	stream;
 	std::string			line;
 
 	// Args nb
@@ -33,6 +32,7 @@ int	main(int ac, char **av)
 		return (std::cout << "Open failed, infiled must be created and READ perm" << std::endl, 2);
 
 	// secure open
+	outName = av[1];
 	outName += ".replace";
 	std::ofstream		outfile((char *)outName.c_str());
 	if (outfile.is_open() == false)
@@ -46,7 +46,7 @@ int	main(int ac, char **av)
 	{
 		line.erase(nPos, toFind.length());
 		line.insert(nPos, toReplace);
-		nPos = line.find(toFind);
+		nPos = line.find(toFind, nPos + toReplace.length());
 	}
 	outfile << line;
 	infile.close();
