@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 18:30:02 by msharifi          #+#    #+#             */
-/*   Updated: 2023/04/26 20:27:01 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/05/12 12:50:20 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ int	main(void)
 
 	z1.randomChump("Manuel");
 	ptr->announce();
+	delete (ptr);
 	return (0);
 }
