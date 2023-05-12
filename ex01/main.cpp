@@ -6,7 +6,7 @@
 /*   By: msharifi <msharifi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 19:50:10 by msharifi          #+#    #+#             */
-/*   Updated: 2023/04/26 20:25:27 by msharifi         ###   ########.fr       */
+/*   Updated: 2023/05/12 13:07:35 by msharifi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,16 @@
 int	main(void)
 {
 	Zombie	*horde;
-	int	n = 4;
-	
+	int	n = 5;
+
+	if (n <= 0)
+	{
+		std::cout << "Please create an positiv number of zombies" << std::endl;
+		return (1);
+	}
+
 	horde = zombieHorde(n, "Manu");
 
-	(void)horde;
 	for (int i = 0; i < n; i++)
 		horde[i].announce();
 	delete[] horde;
